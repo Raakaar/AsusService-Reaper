@@ -1,0 +1,22 @@
+name: ❓ Support Question
+description: Ask a question about usage or setup
+title: "[Support]: "
+labels: [question]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Need help using Cerulean Reaper? Ask below and we’ll try to help!
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: Be as specific as possible.
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Describe your OS, PowerShell version, or any special configuration.
+      placeholder: Windows 11, PowerShell 7.4

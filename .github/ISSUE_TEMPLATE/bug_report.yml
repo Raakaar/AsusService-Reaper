@@ -1,0 +1,43 @@
+name: 🐛 Bug Report
+description: Report an issue with Cerulean Reaper
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting an issue! Please fill out the form below.
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: What version of Cerulean Reaper are you using?
+      placeholder: v1.0.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the bug and what you expected to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Provide clear steps to reproduce the issue.
+      placeholder: |
+        1. Run command...
+        2. Observe output...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logs or Screenshots
+      description: Paste logs or include screenshots if possible.
