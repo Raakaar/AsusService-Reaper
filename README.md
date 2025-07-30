@@ -5,25 +5,26 @@
 ![GitHub Releases](https://img.shields.io/github/v/release/Raakaar/AsusService-Reaper)
 ### ASUS Service Neutralization Utility  
 
-**Repo Name**: `AsusService-Reaper`  
-Author: **Osei Harper**  
-Contributor: *ChatGPT (OpenAI)*  
-License: MIT  
-Version: 1.0  
+ASUS Service Neutralization Utility
+Repository: AsusService-Reaper
+Author: Osei Harper
+Contributor: ChatGPT (OpenAI)
+License: MIT
+Version: 1.0
 Release Date: July 30, 2025
 
 ---
 
 ## 🧭 Overview
 
-**Cerulean Reaper** is a PowerShell-based defensive utility that detects and neutralizes background ASUS services, drivers, and scheduled tasks known to trigger *undesired system shutdowns*, particularly those caused by phantom sensor alerts or embedded BIOS-linked components on high-end ASUS motherboards.
+**Cerulean Reaper** is a PowerShell-based defensive utility designed to detect and neutralize rogue ASUS background services, drivers, and scheduled tasks that can trigger unwanted system shutdowns—especially those caused by phantom alerts linked to high-end ASUS BIOS-integrated components.
 
-The tool deploys as a **boot-time scheduled task** running with SYSTEM-level privileges and neutralizes:
+The utility deploys a **boot-time SYSTEM-level scheduled task** that proactively disables:
 
-- ASUS background processes (e.g., `asus_framework`, `atkexComSvc`)
-- Sensor and fan control services (`AsusFanControlService`)
-- Preloaded shutdown triggers (`wininit.exe` via `NT AUTHORITY\SYSTEM`)
-- ASUS-related scheduled tasks and update hooks
+- ASUS service processes (e.g., asus_framework, atkexComSvc)
+- Fan and sensor control daemons (AsusFanControlService)
+- Preloaded shutdown triggers initiated by wininit.exe
+- ASUS-linked scheduled tasks and update trapshooks
 
 ---
 
@@ -31,37 +32,40 @@ The tool deploys as a **boot-time scheduled task** running with SYSTEM-level pri
 
 Systems with ASUS motherboards—especially those involving custom water loops, AIOs, or heavy ASUS software integration—may experience **automated shutdowns triggered by false leak, thermal, or pump alerts**, often without user consent or visible cause.
 
-Symptoms include:
+Certain ASUS motherboards—particularly those used in enthusiast builds with water cooling, AIOs, or Armoury Crate—may experience unexpected, clean shutdowns triggered by false thermal, pump, or leak alerts.
 
-- Clean but unrequested shutdowns logged as:
--- The process wininit.exe (127.0.0.1) has initiated the shutdown...
--- Reason Code: 0x80070000 (Legacy API shutdown)
-- Kernel Event ID 41 or 1074
-- No scheduled tasks or Windows Updates responsible
+- Typical symptoms include:
 
-Cerulean Reaper **detects and eliminates** these triggers before they can activate.
+-- Sudden shutdowns logged as:
+--- The process wininit.exe (127.0.0.1) has initiated the shutdown...
+--- Reason Code: 0x80070000 (Legacy API shutdown)
+-- Kernel Event ID 41 or 1074
+-- Event Log codes: 1074 or Kernel-Power 41
+-- No Windows Update, task, or user action responsible
+
+Cerulean Reaper neutralizes these conditions before they can take effect..
 
 ---
 
 ## 🔐 Security Justification
 
-This tool also lowers the attack surface exposed by ASUS firmware-integrated software components. These services persist even after uninstalling Armoury Crate or AI Suite and have been tied to privilege escalation and remote code execution vulnerabilities.
+Even after uninstalling Armoury Crate, ASUS's embedded services may persist and expose a security risk. Disabling these services not only stabilizes the system—it reduces your attack surface by neutralizing vectors tied to known vulnerabilities.
 
 ### 🧷 Cited Vulnerabilities & Research
 
-- **Security researcher**: Paul (“Mr Bruh”)
-- [ASUS DriverHub Threats](https://mrbruh.com/asusdriverhub/)
-- [ASUS RMA System Exploit](https://mrbruh.com/asus_p2/)
+- **Researcher**: Paul (“Mr Bruh”)
+-- [ASUS DriverHub Threats](https://mrbruh.com/asusdriverhub/)
+-- [ASUS RMA System Exploit](https://mrbruh.com/asus_p2/)
 
 - **Related CVEs:**
-- [CVE-2025-3462](https://www.cve.org/CVERecord?id=CVE-2025-3462) – Armoury Crate privilege escalation via AsusCertService
-- [CVE-2025-3463](https://www.cve.org/CVERecord?id=CVE-2025-3463) – DLL sideloading vulnerability in ASUS system control stack
+-- [CVE-2025-3462](https://www.cve.org/CVERecord?id=CVE-2025-3462) – Armoury Crate privilege escalation via AsusCertService
+-- [CVE-2025-3463](https://www.cve.org/CVERecord?id=CVE-2025-3463) – DLL sideloading vulnerability in ASUS system control stack
 
-- **Other references:**
-- [AsIO3.sys Driver Vulnerability (Talos)](https://blog.talosintelligence.com/deep-dive-into-asio3/)
-- [TALOS-2022-1485 – Armoury Crate LPE](https://talosintelligence.com/vulnerability_reports/TALOS-2022-1485)
-- [AyySSHush ASUS Router Exploit](https://www.labs.greynoise.io/grimoire/ayysshush)
-- [ASUS Stealth Botnet Vector](https://www.greynoise.io/blog/stealth-botnet-asus/)
+- **Additional references:**
+-- [AsIO3.sys Driver Vulnerability (Talos)](https://blog.talosintelligence.com/deep-dive-into-asio3/)
+-- [TALOS-2022-1485 – Armoury Crate LPE](https://talosintelligence.com/vulnerability_reports/TALOS-2022-1485)
+-- [AyySSHush ASUS Router Exploit](https://www.labs.greynoise.io/grimoire/ayysshush)
+-- [ASUS Stealth Botnet Vector](https://www.greynoise.io/blog/stealth-botnet-asus/)
 
 > **By proactively disabling these services at boot**, Cerulean Reaper defends both system stability and local exploit resilience.
 
@@ -78,13 +82,13 @@ This tool also lowers the attack surface exposed by ASUS firmware-integrated sof
 
 ---
 
-## 🧪 Usage
+## 🧪 Installation
 
 ### 1. Clone or Download the Repository
 
-git clone https://github.com/<your-username>/AsusService-Reaper.git
+- git clone https://github.com/Raakaar/AsusService-Reaper.git
 
-### 2. Run the Installer
+### 2. Register the Task
 
 Open PowerShell as Administrator, then:
 
@@ -92,6 +96,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\Register-ReaperTask.ps1
 
 This will:
+
 - Copy Reaper-ASUS.ps1 into C:\ProgramData\ASUS-Reaper\
 - Create a boot-triggered task named Cerulean-ASUS-Reaper
 - Register it to run silently and immediately on every startup
@@ -126,20 +131,31 @@ Remove-Item "C:\ProgramData\ASUS-Reaper" -Recurse -Force
 
 ---
 
-### 🧠 Future Ideas
+### 🧠 Future Enhancements
 
- - 🔔 Optional email or popup alert if ASUS services respawn
- - ⛔ AppLocker / Defender policy to permanently block ASUS services
- - 🧬 WMI/Registry watcher for ASUS reinstall attempts
+- 🔔 Optional email or popup alert if ASUS services respawn
+- ⛔ AppLocker / Defender policy to permanently block ASUS services
+- 🧬 WMI/Registry watcher for ASUS reinstall attempts
 
 ---
 
 ### 🙌 Credits
 
 Author: Osei Harper
-Code Co-pilot: ChatGPT (OpenAI)
+Collaborator/Formatter: ChatGPT (OpenAI)
 
 ---
 
 ### 📜 License
+
 MIT License. Use, fork, enhance, or adapt freely.
+
+### 💸 Support This Project
+
+If Cerulean Reaper saved your system, spared your sanity, or inspired your curiosity—consider supporting continued development and new features.
+
+- [![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-lightgrey?logo=github)](https://github.com/sponsors/Raakaar)
+- [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support%20the%20Project-yellow?logo=buy-me-a-coffee&logoColor=white)](https://coff.ee/raakaar)
+- [![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/OseiHarper)
+
+Every bit helps. Thank you 🙏
