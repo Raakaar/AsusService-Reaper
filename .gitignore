@@ -1,0 +1,34 @@
+# Ignore PowerShell artifacts
+*.ps1~
+*.ps1.save
+*.ps1.tmp
+*.ps1.bak
+*.ps1.backup
+*.ps1.old
+*.ps1.txt
+
+# Ignore system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Ignore PowerShell logs or debug dumps
+*.log
+*.evtx
+*.dmp
+
+# Ignore VSCode/Editor junk
+.vscode/
+*.code-workspace
+
+# Ignore runtime cache
+*.pscache
+*.pshistory
+
+# Ignore temp folders
+logs/
+temp/
+tmp/
+
+# Optional: Ignore ProgramData logging (if not intended to share)
+C:/ProgramData/ASUS-Reaper/
