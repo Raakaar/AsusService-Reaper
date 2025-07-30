@@ -3,7 +3,7 @@
 ![PowerShell](https://img.shields.io/badge/Built%20with-PowerShell-blue.svg)
 ![MIT License](https://img.shields.io/github/license/Raakaar/AsusService-Reaper)
 ![GitHub Releases](https://img.shields.io/github/v/release/Raakaar/AsusService-Reaper)
-### ASUS Service Neutralization Utility  
+## ASUS Service Neutralization Utility  
 
 ASUS Service Neutralization Utility
 Repository: AsusService-Reaper
@@ -117,21 +117,21 @@ README.md	This file
 
 ---
 
-### 🧯 Uninstallation
+## 🧯 Uninstallation
 
 To remove Cerulean Reaper:
 
-## 1. Delete the scheduled task:
+### 1. Delete the scheduled task:
 
 Unregister-ScheduledTask -TaskName "Cerulean-ASUS-Reaper" -Confirm:$false
 
-## 2. Delete the script folder:
+### 2. Delete the script folder:
 
 Remove-Item "C:\ProgramData\ASUS-Reaper" -Recurse -Force
 
 ---
 
-### 🧠 Future Enhancements
+## 🧠 Future Enhancements
 
 - 🔔 Optional email or popup alert if ASUS services respawn
 - ⛔ AppLocker / Defender policy to permanently block ASUS services
@@ -139,18 +139,18 @@ Remove-Item "C:\ProgramData\ASUS-Reaper" -Recurse -Force
 
 ---
 
-### 🙌 Credits
+## 🙌 Credits
 
 Author: Osei Harper
 Collaborator/Formatter: ChatGPT (OpenAI)
 
 ---
 
-### 📜 License
+## 📜 License
 
 MIT License. Use, fork, enhance, or adapt freely.
 
-### 💸 Support This Project
+## 💸 Support This Project
 
 If Cerulean Reaper saved your system, spared your sanity, or inspired your curiosity—consider supporting continued development and new features.
 
