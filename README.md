@@ -18,7 +18,7 @@ If your ASUS ROG motherboard suddenly displays “Water Leak Detected” and shu
 
 - Repository: AsusService-Reaper
 - Author: Osei Harper
-- Contributor: ChatGPT (OpenAI)
+- Documentation Assistance: ChatGPT (OpenAI)
 - License: MIT
 - Version: 1.0
 
@@ -28,9 +28,7 @@ Release Date: July 30, 2025
 
 ## 🧭 Overview
 
-**Cerulean Reaper** is a PowerShell-based defensive utility designed to detect and disables telemetry services, drivers, and scheduled taskss with known CVEs that trigger false shutdowns. ASUS has not patched these.  
-It addresses recent ASUS driver vulnerabilities (CVE-2025-3462, CVE-2025-3463) by minimizing persistent background services that compromise system stability.
-
+**Cerulean Reaper** is a PowerShell-based defensive utility designed to detect and disables telemetry services, drivers, and scheduled tasks with known CVEs that trigger false shutdowns. ASUS has not patched these.  
 It addresses recent ASUS driver vulnerabilities (CVE-2025-3462, CVE-2025-3463) by minimizing persistent background services that compromise system stability.
 
 Built for creators, gamers, and professionals using ASUS motherboards—who deserve peace, not phantom processes.
@@ -59,7 +57,9 @@ Certain ASUS motherboards—particularly those used in enthusiast builds with wa
 -- Event Log codes: 1074 or Kernel-Power 41
 -- No Windows Update, task, or user action responsible
 
-Cerulean Reaper neutralizes these conditions before they can take effect..
+Cerulean Reaper neutralizes these conditions before they can take effect.
+
+### ⚠️ **Note**: Disabling these services will break ASUS software features (e.g., RGB lighting control, fan curve tuning, Armoury Crate). Only use this tool if ASUS tools are impacting your system stability or you care about security.
 
 ---
 
@@ -104,6 +104,11 @@ See official CVE entries:
 - 🔁 Persistent via SYSTEM-level scheduled task
 - 📄 Logs all actions to `C:\ProgramData\ASUS-Reaper\kill.log`
 - 🔓 Licensed under MIT for open sharing and modification
+
+---
+
+## Important Notes:
+
 
 ---
 
@@ -155,6 +160,8 @@ Unregister-ScheduledTask -TaskName "Cerulean-ASUS-Reaper" -Confirm:$false
 
 Remove-Item "C:\ProgramData\ASUS-Reaper" -Recurse -Force
 
+### 3. Reboot twice. ASUS services (ArmoryCrate, MyAsus) will reinstall or prompt for reinstallation automatically on next boot.
+
 ---
 
 ## 🧠 Future Enhancements
@@ -175,6 +182,8 @@ Collaborator/Formatter: ChatGPT (OpenAI)
 ## 📜 License
 
 MIT License. Use, fork, enhance, or adapt freely.
+
+**Disclaimer**: ASUS is a registered trademark of ASUSTeK Computer Inc. This project is not affiliated with ASUS. Use at your own risk.
 ---
 ## Corporate Response Protocol
 
