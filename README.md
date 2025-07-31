@@ -28,7 +28,7 @@ Release Date: July 30, 2025
 
 ## 🧭 Overview
 
-**Cerulean Reaper** is a PowerShell-based defensive utility designed to detect and disables telemetry services, drivers, and scheduled tasks with known CVEs that trigger false shutdowns. ASUS has not patched these.  
+**Cerulean Reaper** is a PowerShell-based defensive utility designed to detect and disable telemetry services, drivers, and scheduled tasks with known CVEs that trigger false shutdowns. ASUS has not patched these.  
 It addresses recent ASUS driver vulnerabilities (CVE-2025-3462, CVE-2025-3463) by minimizing persistent background services that compromise system stability.
 
 Built for creators, gamers, and professionals using ASUS motherboards—who deserve peace, not phantom processes.
@@ -45,8 +45,6 @@ The utility deploys a **boot-time SYSTEM-level scheduled task** that proactively
 ## ⚠️ What Problem Does It Solve?
 
 Systems with ASUS motherboards—especially those involving custom water loops, AIOs, or heavy ASUS software integration—may experience **automated shutdowns triggered by false leak, thermal, or pump alerts**, often without user consent or visible cause.
-
-Certain ASUS motherboards—particularly those used in enthusiast builds with water cooling, AIOs, or Armoury Crate—may experience unexpected, clean shutdowns triggered by false thermal, pump, or leak alerts.
 
 - Typical symptoms include:
 
@@ -107,11 +105,6 @@ See official CVE entries:
 
 ---
 
-## Important Notes:
-
-
----
-
 ## 🧪 Installation
 
 ### 1. Clone or Download the Repository
@@ -160,7 +153,7 @@ Unregister-ScheduledTask -TaskName "Cerulean-ASUS-Reaper" -Confirm:$false
 
 Remove-Item "C:\ProgramData\ASUS-Reaper" -Recurse -Force
 
-### 3. Reboot twice. ASUS services (ArmoryCrate, MyAsus) will reinstall or prompt for reinstallation automatically on next boot.
+### 3. Reboot twice. ASUS services (ArmoryCrate, MyAsus) will reinstall or prompt for reinstallation automatically on next boot. (Some features may require manual ASUS software reinstallation)
 
 ---
 
@@ -175,7 +168,8 @@ Remove-Item "C:\ProgramData\ASUS-Reaper" -Recurse -Force
 ## 🙌 Credits
 
 Author: Osei Harper
-Collaborator/Formatter: ChatGPT (OpenAI)
+Documentation Assistance: ChatGPT (OpenAI)
+Proofreader: DeepSeek
 
 ---
 
