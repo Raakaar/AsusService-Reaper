@@ -3,6 +3,8 @@
 ![PowerShell](https://img.shields.io/badge/Built%20with-PowerShell-blue.svg)
 ![MIT License](https://img.shields.io/github/license/Raakaar/AsusService-Reaper)
 ![GitHub Releases](https://img.shields.io/github/v/release/Raakaar/AsusService-Reaper)
+![Security](https://img.shields.io/badge/Mitigates-CVE--2025--3462|3463-critical)
+![License](https://img.shields.io/github/license/Raakaar/AsusService-Reaper)
 ## ASUS Service Neutralization Utility  
 
 ASUS Service Neutralization Utility
