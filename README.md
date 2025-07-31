@@ -6,18 +6,25 @@
 ## ASUS Service Neutralization Utility  
 
 ASUS Service Neutralization Utility
-Repository: AsusService-Reaper
-Author: Osei Harper
-Contributor: ChatGPT (OpenAI)
-License: MIT
-Version: 1.0
+
+- Repository: AsusService-Reaper
+- Author: Osei Harper
+- Contributor: ChatGPT (OpenAI)
+- License: MIT
+- Version: 1.0
+
 Release Date: July 30, 2025
 
 ---
 
 ## 🧭 Overview
 
-**Cerulean Reaper** is a PowerShell-based defensive utility designed to detect and neutralize rogue ASUS background services, drivers, and scheduled tasks that can trigger unwanted system shutdowns—especially those caused by phantom alerts linked to high-end ASUS BIOS-integrated components.
+**Cerulean Reaper** is a PowerShell-based defensive utility designed to detect and neutralize rogue ASUS background services, drivers, and scheduled tasks that can trigger unwanted system shutdowns.  
+It addresses recent ASUS driver vulnerabilities (CVE-2025-3462, CVE-2025-3463) by minimizing persistent background services that compromise system stability.
+
+It addresses recent ASUS driver vulnerabilities (CVE-2025-3462, CVE-2025-3463) by minimizing persistent background services that compromise system stability.
+
+Built for creators, gamers, and professionals using ASUS motherboards—who deserve peace, not phantom processes.
 
 The utility deploys a **boot-time SYSTEM-level scheduled task** that proactively disables:
 
@@ -49,7 +56,16 @@ Cerulean Reaper neutralizes these conditions before they can take effect..
 
 ## 🔐 Security Justification
 
-Even after uninstalling Armoury Crate, ASUS's embedded services may persist and expose a security risk. Disabling these services not only stabilizes the system—it reduces your attack surface by neutralizing vectors tied to known vulnerabilities.
+ASUS' recent BIOS-level driver behavior has led to system instability, unexpected shutdowns, and elevated attack surfaces. This tool directly mitigates patterns related to:
+
+- **CVE-2025-3462**: Vulnerability in Armoury Crate background service installation behavior
+- **CVE-2025-3463**: ASUS DriverHub privilege escalation vector via persistent scheduled tasks and AsIO3.sys
+
+**Cerulean Reaper** disables known ASUS system hooks and services that align with these CVEs, helping protect users who cannot afford to replace expensive hardware.
+
+See official CVE entries:  
+[CVE-2025-3462 – NVD](https://nvd.nist.gov/vuln/detail/CVE-2025-3462)  
+[CVE-2025-3463 – NVD](https://nvd.nist.gov/vuln/detail/CVE-2025-3463)
 
 ### 🧷 Cited Vulnerabilities & Research
 
@@ -108,6 +124,7 @@ This will:
 The tool will now neutralize ASUS threats automatically at each boot.
 
 ### 📁 Files Included
+
 File	Purpose
 Reaper-ASUS.ps1	Main kill routine for ASUS processes, services, and tasks
 Register-ReaperTask.ps1	One-time setup script for persistent boot scheduling
@@ -159,3 +176,11 @@ If Cerulean Reaper saved your system, spared your sanity, or inspired your curio
 - [![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/OseiHarper)
 
 Every bit helps. Thank you 🙏
+
+---
+
+## 🙏 Appreciation
+
+If this tool helped you stabilize your system or saved you time, consider **⭐ starring** the repo to help others find it.
+
+Feedback, forks, and pull requests are welcome—especially if you’ve got improvements to error handling, service detection, or OS compatibility.
