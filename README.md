@@ -46,14 +46,13 @@ The utility deploys a **boot-time SYSTEM-level scheduled task** that proactively
 
 Systems with ASUS motherboards—especially those involving custom water loops, AIOs, or heavy ASUS software integration—may experience **automated shutdowns triggered by false leak, thermal, or pump alerts**, often without user consent or visible cause.
 
-- Typical symptoms include:
-
--- Sudden shutdowns logged as:
---- The process wininit.exe (127.0.0.1) has initiated the shutdown...
---- Reason Code: 0x80070000 (Legacy API shutdown)
--- Kernel Event ID 41 or 1074
--- Event Log codes: 1074 or Kernel-Power 41
--- No Windows Update, task, or user action responsible
+### Typical symptoms include:
+Sudden shutdowns logged as:
+- The process wininit.exe (127.0.0.1) has initiated the shutdown...
+- Reason Code: 0x80070000 (Legacy API shutdown)
+- Kernel Event ID 41 or 1074
+- Event Log codes: 1074 or Kernel-Power 41
+- No Windows Update, task, or user action responsible
 
 Cerulean Reaper neutralizes these conditions before they can take effect.
 
@@ -132,12 +131,13 @@ The tool will now neutralize ASUS threats automatically at each boot.
 
 ### 📁 Files Included
 
-File	Purpose
-Reaper-ASUS.ps1	Main kill routine for ASUS processes, services, and tasks
-Register-ReaperTask.ps1	One-time setup script for persistent boot scheduling
-.gitignore	Ignores logs, temp files, and PowerShell editor artifacts
-LICENSE	MIT License (fully open-source)
-README.md	This file
+| File | Purpose |
+|---------------------------|-------------------------------------------------------------------------|
+| Reaper-ASUS.ps1 | Main kill routine for ASUS processes, services, and tasks |
+| Register-ReaperTask.ps1 | One-time setup script for persistent boot scheduling |
+| .gitignore | Ignores logs, temp files, and PowerShell editor artifacts |
+| LICENSE | MIT License (fully open-source) |
+| README.md | This file |
 
 ---
 
@@ -175,10 +175,32 @@ Proofreader: DeepSeek
 
 ## 📜 License
 
-MIT License. Use, fork, enhance, or adapt freely.
+MIT License
+
+Copyright (c) 2025, Osei Harper 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 **Disclaimer**: ASUS is a registered trademark of ASUSTeK Computer Inc. This project is not affiliated with ASUS. Use at your own risk.
+
 ---
+
 ## Corporate Response Protocol
 
 ### 🚨 If ASUS Contacts You  
