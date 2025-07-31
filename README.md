@@ -7,7 +7,7 @@
 
 ## ASUS Service Neutralization Utility  
 
-ASUS Service Neutralization Utility
+If your ASUS ROG motherboard suddenly displays “Water Leak Detected” and shuts down your system—even when you're not using a water cooling loop—this script is for you. This open-source PowerShell tool disables false telemetry from WB_SENSOR headers that trigger unexpected shutdowns on Crosshair, Maximus, and other ROG boards.
 
 - Repository: AsusService-Reaper
 - Author: Osei Harper
