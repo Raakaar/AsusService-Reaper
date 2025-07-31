@@ -1,11 +1,18 @@
-# Cerulean Reaper  
-
 ![PowerShell](https://img.shields.io/badge/Built%20with-PowerShell-blue.svg)
 ![MIT License](https://img.shields.io/github/license/Raakaar/AsusService-Reaper)
 ![GitHub Releases](https://img.shields.io/github/v/release/Raakaar/AsusService-Reaper)
 ![Security](https://img.shields.io/badge/Mitigates-CVE--2025--3462|3463-critical)
 
+# Cerulean Reaper  
+
+## Why "Reaper"?  
+- It reaps unstable processes ASUS won’t.  
+- It resurrects systems they abandoned.  
+- Unlike ASUS, it leaves control in *your* hands.  
+
 ## ASUS Service Neutralization Utility  
+
+### This tool disables ASUS services that *they* won’t fix.
 
 If your ASUS ROG motherboard suddenly displays “Water Leak Detected” and shuts down your system—even when you're not using a water cooling loop—this script is for you. This open-source PowerShell tool disables false telemetry from WB_SENSOR headers that trigger unexpected shutdowns on Crosshair, Maximus, and other ROG boards.
 
@@ -21,7 +28,7 @@ Release Date: July 30, 2025
 
 ## 🧭 Overview
 
-**Cerulean Reaper** is a PowerShell-based defensive utility designed to detect and neutralize rogue ASUS background services, drivers, and scheduled tasks that can trigger unwanted system shutdowns.  
+**Cerulean Reaper** is a PowerShell-based defensive utility designed to detect and disables telemetry services, drivers, and scheduled taskss with known CVEs that trigger false shutdowns. ASUS has not patched these.  
 It addresses recent ASUS driver vulnerabilities (CVE-2025-3462, CVE-2025-3463) by minimizing persistent background services that compromise system stability.
 
 It addresses recent ASUS driver vulnerabilities (CVE-2025-3462, CVE-2025-3463) by minimizing persistent background services that compromise system stability.
@@ -168,6 +175,16 @@ Collaborator/Formatter: ChatGPT (OpenAI)
 ## 📜 License
 
 MIT License. Use, fork, enhance, or adapt freely.
+---
+## Corporate Response Protocol
+
+### 🚨 If ASUS Contacts You  
+
+- Politely decline NDAs.  
+- Redirect to public GitHub issues.  
+- Cite their silence: *"No official patch exists as of {current date}."*
+
+---
 
 ## 💸 Support This Project
 
