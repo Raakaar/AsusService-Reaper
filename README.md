@@ -1,18 +1,19 @@
+# Cerulean Reaper
+
 ![PowerShell](https://img.shields.io/badge/Built%20with-PowerShell-blue.svg)
 ![MIT License](https://img.shields.io/github/license/Raakaar/AsusService-Reaper)
 ![GitHub Releases](https://img.shields.io/github/v/release/Raakaar/AsusService-Reaper)
 ![Security](https://img.shields.io/badge/Mitigates-CVE--2025--3462|3463-critical)
 
-# Cerulean Reaper  
-
 ## Why "Reaper"?  
+
 - It reaps unstable processes ASUS won’t.  
 - It resurrects systems they abandoned.  
 - Unlike ASUS, it leaves control in *your* hands.  
 
 ## ASUS Service Neutralization Utility  
 
-### This tool disables ASUS services that *they* won’t fix.
+### This tool disables ASUS services that *they* won’t fix
 
 If your ASUS ROG motherboard suddenly displays “Water Leak Detected” and shuts down your system—even when you're not using a water cooling loop—this script is for you. This open-source PowerShell tool disables false telemetry from WB_SENSOR headers that trigger unexpected shutdowns on Crosshair, Maximus, and other ROG boards.
 
@@ -20,9 +21,20 @@ If your ASUS ROG motherboard suddenly displays “Water Leak Detected” and shu
 - Author: Osei Harper
 - Documentation Assistance: ChatGPT (OpenAI)
 - License: MIT
-- Version: 1.0
+- Version: 1.1.1
 
-Release Date: July 30, 2025
+Release Date: August 6, 2025
+
+---
+
+## 🆕 What’s New in v1.1.1
+
+- Automatic UAC elevation  
+- Centralized timestamped logging with rotation  
+- Archive cleanup after 100+ logs  
+- Retry logic for stubborn ASUS services  
+- Improved error messaging and log clarity  
+- Silent background registration of the kill script  
 
 ---
 
@@ -47,7 +59,9 @@ The utility deploys a **boot-time SYSTEM-level scheduled task** that proactively
 Systems with ASUS motherboards—especially those involving custom water loops, AIOs, or heavy ASUS software integration—may experience **automated shutdowns triggered by false leak, thermal, or pump alerts**, often without user consent or visible cause.
 
 ### Typical symptoms include:
+
 Sudden shutdowns logged as:
+
 - The process wininit.exe (127.0.0.1) has initiated the shutdown...
 - Reason Code: 0x80070000 (Legacy API shutdown)
 - Kernel Event ID 41 or 1074
@@ -95,6 +109,10 @@ See official CVE entries:
 
 ## ⚙️ Features
 
+- 🔐 Auto-elevates with UAC prompt if not run as Administrator  
+- 📁 Rotates logs and archives older ones automatically  
+- 🔄 Retries failed service disables up to 5 times  
+- 🛠️ Registers self-running SYSTEM task with robust error handling  
 - 🛡️ Terminates ASUS background processes on boot
 - ⛔ Disables services tied to thermal/leak shutdowns
 - 🧹 Removes ASUS-related scheduled tasks
@@ -228,3 +246,10 @@ Every bit helps. Thank you 🙏
 If this tool helped you stabilize your system or saved you time, consider **⭐ starring** the repo to help others find it.
 
 Feedback, forks, and pull requests are welcome—especially if you’ve got improvements to error handling, service detection, or OS compatibility.
+
+---
+
+## 📋 Documentation
+
+- [CHANGELOG.md](./CHANGELOG.md) for a full list of updates.
+- [Release Notes](./RELEASENOTES.md)
