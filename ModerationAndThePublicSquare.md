@@ -72,25 +72,29 @@ I propose that forums move away from top-down, opaque moderation structures to d
 
 What if it could work like this:
 
- 1. **A Challenged or Flagged Posts Page**
-  a. Instead of a moderator unilaterally deleting a post, a flagged post would be moved to a publicly visible "challenged posts" section.
- 2. *Community Jury:*
-  a. The post's fate would then be decided by the community. Users would be able to see the post, the reasons it was flagged, and debate its merits.
- 3. Debate and Decision:
-  a. A simple upvote/downvote system, or a more sophisticated voting mechanism, could then determine whether the post stays, is modified, or is removed.
-  b. The "innocent until proven guilty" principle would be the guiding ethos, meaning the post remains visible until a sufficient number of community members agree it violates the rules.
-  c. 3-pronged decision scheme:
-   i. False-flag: Immediate restoration.
-   ii. Revision and approval: Have OP revise their submission, and then be reviewed by the mods for flag/no-flag consideration.
-   iii. Last resort deletion. Usually reserved for egregious violations or the  OP’s refusal to revise or lack of responding.
- 4. Transparency and Accountability:
-  a. All moderation actions, including the reasons for the flag and the community's decision, would be publicly logged, creating a transparent record that holds both flaggers and moderators accountable.
-  b. This will also allow site owners visibility into moderator patterns. Enabling meaningful opportunities for training and correction.
- c. Incorporate moderator limits and rotations.  Add a clear path to participate.
- 5. Exceptions and Exception Handling:
-  a.Multilayered filtering: AI filtering for unambiguous illegality or if it violates narrowly defined universal rules (e.g., child exploitation, direct threats)
-  b. Consensus triage: No single moderator has unilateral authority to delete.  If the violation is clear-cut and a quorum of at least 2 of 3 mods agree, reasons and deletion notes must be made and posted publicly.  
-  c. Cases involving subjective rule interpretations must be adjudicated by the community jury.
+1. **A Challenged or Flagged Posts Page**  
+   - Instead of a moderator unilaterally deleting a post, a flagged post would be moved to a publicly visible "challenged posts" section.
+
+2. **Community Jury**  
+   - The post's fate would then be decided by the community.  
+   - Users would be able to see the post, the reasons it was flagged, and debate its merits.
+
+3. **Debate and Decision**  
+   - A simple upvote/downvote system, or a more sophisticated voting mechanism, could then determine whether the post stays, is modified, or is removed.  
+   - The "innocent until proven guilty" principle would guide decisions.  
+     1. **False-flag:** Immediate restoration.  
+     2. **Revision and approval:** Have OP revise their submission, then review again.  
+     3. **Last resort deletion:** Only for egregious violations or refusal to revise.
+
+4. **Transparency and Accountability**  
+   - All moderation actions, including reasons for flags, would be publicly logged.  
+   - Logs create a transparent record and reveal moderator patterns.  
+   - Enables site owners to train or correct moderation behavior.
+
+5. **Exceptions and Exception Handling**  
+   - **Multilayered filtering:** AI filters for unambiguous illegality (e.g., child exploitation).  
+   - **Consensus triage:** No single moderator has unilateral deletion power.  
+   - Subjective cases must go to the community jury.
 
 I know that this is not a perfect solution, and more aspirational than anything else, but it is a start.
 
